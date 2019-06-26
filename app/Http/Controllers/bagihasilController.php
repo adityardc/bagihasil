@@ -16,11 +16,12 @@ class bagihasilController extends Controller
     public function cari(Request $request)
     {
     	$validator = Validator::make(request()->all(), [
-            'kode_captcha' => 'captcha'
+			'kode_captcha' => 'captcha|required|max:4',
+			'kode_spta'    => 'required'
         ]);
 
         if($validator->fails()){
-            return back()->with('captcha-salah', "Kode Captcha salah !")->withInput();
+            return back()->with('captcha-salah', "Kode Captcha salah atau semua kolom harus diisi !")->withInput();
         }else{
         	$noSpta = $request->pg."-".$request->kode_spta;
 	        if($request->pg == "IF30"){

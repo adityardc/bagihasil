@@ -122,17 +122,17 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="kode_spta">Kode SPTA</label>
-                                            <input type="text" class="form-control" name="kode_spta" id="kode_spta" placeholder="ex : 01012019-0001" data-mask="99999999-9999" required="true" value="{{ old('kode_spta') }}">
+                                            <input type="text" class="form-control" name="kode_spta" id="kode_spta" placeholder="ex : 01012019-0001" data-mask="99999999-9999" value="{{ old('kode_spta') }}">
                                         </div>
                                         <div class="form-group refreshCaptcha">
                                             {!! captcha_img('flat') !!}
                                         </div>
                                         <div class="form-group text-center">
-                                            <input type="text" class="form-control" name="kode_captcha" id="kode_captcha" placeholder="Masukkan kode diatas" value="{{ old('kode_captcha') }}" required="true">
+                                            <input type="text" class="form-control" name="kode_captcha" id="kode_captcha" placeholder="Masukkan kode diatas" value="{{ old('kode_captcha') }}">
                                         </div>
                                         <div class="form-group text-center">
-                                            <button type="submit" class="btn btn-danger"><i class="fa fa-search"></i> Cari</button>
-                                            <button type="button" class="btn btn-success" onclick="refreshCaptcha()"><i class="fa fa-refresh"></i> refresh kode</button>
+                                            <button type="submit" class="btn btn-danger" onclick="this.disabled=true;this.form.submit();"><i class="fa fa-search"></i> Cari</button>
+                                            <button type="button" class="btn btn-success" onclick="refreshCaptcha()"><i class="fa fa-refresh"></i> refresh Captcha</button>
                                         </div>
                                     </form>
                                 </div>
